@@ -1,0 +1,1 @@
+const cities = ["Austin", "Chicago","New York", "Orlando", "San Francisco", "Miami", "Denver"];
