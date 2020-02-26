@@ -1,0 +1,28 @@
+/*
+   Template Style Sheet
+*/ 
+
+body {
+ text-align: left;
+}
+
+.container {
+  width: 80%;
+}
+
+section {
+  margin-bottom: 5em;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 5px;
+  background-color: #212529;
+  color: whitesmoke;
+  width: 100%;
+  position: fixed;
+  border-top: 2px solid;
+  left: 0;
+  bottom: 0;
+}
+
