@@ -33,7 +33,7 @@ Another way to search is by clicking on the predetermined list of Cities in the 
 GitHub Pages: <https://reithal.github.io/WeatherDashboard/>
 GitHub Repo:  <https://github.com/reithal/WeatherDashboard>
 
-![Image of WeatherDashboard](../assets/images/Demo.png?raw=true>
+![Image_of_WeatherDashboard](https://reithal.github.io/WeatherDashboard/assets/images/Demo.png)
 
 ## Roadmap
 
