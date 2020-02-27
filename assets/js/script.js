@@ -78,6 +78,10 @@ function renderForecast(forecastResult) {
 
 $(document).ready(function () {
 
+  var searchBtn = document.getElementById("searchBtn");
+  var searchInput = document.getElementById("searchInput");
+
+
   setTimeout(function () {
     $('#sidebar').toggleClass('active');},2000);
 
@@ -94,16 +98,25 @@ $(document).ready(function () {
     
   });
 
+
+
+  searchBtn.addEventListener("click",function(event){
+    event.preventDefault();  // Don't refresh the page.
+    var cityId = searchInput.value + ",US";
+    makeAjaxRequest(apiURL+cityId,renderToday);
+    makeAjaxRequest(apiForecastURL+cityId,renderForecast);
+  
+  });
+
   $(document).on("click", ".cityItem", function(){
     var cityId = $(this).attr("id") + ",US";
     makeAjaxRequest(apiURL+cityId,renderToday);
     makeAjaxRequest(apiForecastURL+cityId,renderForecast);
-  
-  
   });
 
+// Defaulting call to Miami on page load.
+makeAjaxRequest(apiURL + "Miami,US",renderToday);
+makeAjaxRequest(apiForecastURL+"Miami,US", renderForecast);
 
 });
 
-makeAjaxRequest(apiURL + "Miami,US",debugToConsole);
-makeAjaxRequest(apiForecastURL+"Miami", debugAgain);
