@@ -41,6 +41,16 @@ section {
   max-width: 18rem;
 }
 
+.forecast > div > h5 {
+  display: inline-flex;
+}
+
+.condition {
+
+    text-transform:capitalize;
+
+}
+
 #sidebar {
     min-width: 250px;
     max-width: 250px;

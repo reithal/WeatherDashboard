@@ -46,19 +46,23 @@ function makeAjaxRequest(url, callback) {
 function renderToday(results) {
   $('#todayIcon>img').replaceWith(`<img src="http://openweathermap.org/img/wn/${results.weather[0].icon}@2x.png" alt="weather icon"></img>`);
   $('#today>h3').replaceWith(`<h3 class="card-title">${results.name}</h3>`);
+  $('#today> .condition').text(`${results.weather[0].description}`)
   const timeUpdated = moment.unix(results.dt);
   $('#today > p > small').text(`Last Updated ${timeUpdated.fromNow()}`);
   $('#main').text(`${results.main.temp.toFixed(1)}\xB0 / ${results.main.feels_like.toFixed(1)}\xB0 F`)
   $('#loHi').text(`${results.main.temp_min.toFixed(1)}\xB0 / ${results.main.temp_max.toFixed(1)}\xB0 F`)
+  $('#winds').text(`${Math.round(results.wind.speed)} m/s`)
+
 }
 
 function renderForecast(forecastResult) {
   console.log(forecastResult);
   counter = 0;
   for (i = 0; i < 5; i++) {
-    
+
     var day = '#day' + (i + 1);
     const timeUpdated = moment.unix(forecastResult.list[i].dt);
+    $(day + '>img').replaceWith(`<img width="50%" src="http://openweathermap.org/img/wn/${forecastResult.list[i].weather[0].icon}@2x.png" alt="weather icon"></img>`);
     $(day + '> .date').text(timeUpdated.format("M/DD"));
     $(day + '> .temp').text(`Temp: ${forecastResult.list[i].main.temp.toFixed(1)}\xB0 F`);
     $(day + '> .humidity').text(`Humidity: ${forecastResult.list[i].main.humidity}`);

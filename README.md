@@ -1,4 +1,5 @@
 # WeatherDashboard
+
 A simple weather app dashboard connected to OpenWeatherMap API.
 
 ## Introduction
@@ -11,7 +12,6 @@ The current weather will provide:
 * Temperature
 * Humidity
 * Wind speed
-* UV index
   
 The forecasted weather will provide:
 
